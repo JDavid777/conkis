@@ -18,7 +18,6 @@ text_buffer_size 2048
 own_window yes
 own_window_type dock
 own_window_transparent yes
-own_window_argb_value 0
 own_window_hints undecorated,sticky,skip_taskbar,skip_pager
 alignment top_left
 gap_x 0
@@ -28,46 +27,52 @@ default_bar_size 30 8
 draw_shades no
 default_color ffffff
 default_shade_color 000000
-color0 00d9ff
+color0 6c80a1
 color1 9c9c9c
 color2 c5c5c5
-color3 4bc457
+color_hour 74bfcf
 own_window_argb_visual yes
 own_window_colour 000000
 own_window_argb_value 0
 top_cpu_separe false
 
 TEXT
-${goto 20}${color0}${font Zekton:style=bold:size=15}${voffset 38}Dawish
+${goto 20}${color0}${font Zekton:style=bold:size=15}${voffset 38}Dawish #Username
 
-${voffset -65}${font Zekton:style=Bold:size=12}${color1}${goto 120}${uptime}
+${goto 120}${voffset -44}${font Zekton:style=Bold:size=12}${color0}Kde neon #SO
+${voffset 25}${font Zekton:style=Bold:size=12}${color1}${goto 120}${uptime} #Uptime
 
-${goto 120}${voffset -30}${color1}${font Zekton:style=Bold:size=12}${color1}${sysname}
-${color1}${font}${font Chinacat:size=12}${offset 100}${voffset 25}${time %d %B, %Y} 
+${goto 20}${voffset 28}${color1}${font Zekton:style=bold:size=11}${acpitemp} #CPU temp
+${goto 20}${voffset 25}${color1}${font Zekton:style=bold:size=11}°C
 
-${goto 20}${voffset -45}${color1}${font Zekton:style=bold:size=11}${acpitemp} 
+${goto 100}${color1}${font Chinacat:size=12}${voffset -55}${time %d %B, %Y} #Date
+${goto 130}${color0}${font Zekton:style=bold:size=30}${voffset 30}${time %H:%M} #Hour
 
-${goto 20}${voffset -20}${color1}${font Zekton:style=bold:size=11}°C
+${color0}${goto 50}${voffset -55}${font Zekton:style=Bold:size=11}CPU #CPU
+${goto 55}${voffset 25}${font Zekton:style=Bold:size=11}${color1}${cpu cpu0}% #CPU value
 
-${voffset -15}${goto 130}${color3}${font Zekton:style=bold:size=30}${time %H:%M}${font}${color1}
+${color0}${goto 80}${voffset 23}${font Zekton:style=Bold:size=11}Battery #Batery
+${goto 92}${voffset 28}${font Zekton:style=Bold:size=11}${color1}${battery_percent BAT0}% #Batery value
 
-${goto 50}${voffset -40}${font Zekton:style=Bold:size=11}CPU
-${goto 55}${voffset 5}${font Zekton:style=Bold:size=11}${color1}${cpu cpu0}%
+${color0}${voffset -48}${goto 168}/home #Home disk
+${color1}${goto 168}${voffset 25}${font Zekton:style=Bold:size=10}${fs_used /home} #Home disk space
 
-${goto 80}${voffset 5}${font Zekton:style=Bold:size=11}Battery
-${goto 95}${voffset 5}${font Zekton:style=Bold:size=11}${color1}${battery_percent BAT0}%
+${voffset 30}${color0}${goto 33}${font Zekton:style=Bold:size=10}/dev/sda #Disk SSD
+${voffset 25}${color1}${goto 40}${font Zekton:style=Bold:size=9}${diskio /dev/sda} #SSD value
 
-${voffset -70}${goto 165}/home 
+${voffset -45}${color0}${goto 117}${font Zekton:style=Bold:size=10}/dev/sdb #Disk HDD
+${voffset 25}${color1}${goto 125}${font Zekton:style=Bold:size=9}${diskio /dev/sdb} #HDD value
 
-${goto 165}${voffset -15}${font Zekton:style=Bold:size=10}${fs_used /home}
+${voffset -45}${font Zekton:style=Bold:size=11}${color0}${goto 217}RAM #RAM
+${voffset 25}${color1}${goto 225}${font Zekton:style=Bold:size=11}${memperc}%  #RAM value
 
-${voffset 10}${goto 33}${font Zekton:style=Bold:size=10}/dev/sda${goto 119}/dev/sdb${font Zekton:style=Bold:size=11}${color1}${goto 217}RAM
-${goto 40}${font Zekton:style=Bold:size=9}${diskio /dev/sda}${goto 130}${diskio /dev/sdb} ${goto 225}${font Zekton:style=Bold:size=11}${memperc}%
+${color0}${voffset 20}${font Zekton:style=Bold:size=11}${goto 85}ROOT #Root user
+${color1}${voffset 20}${font Zekton:style=Bold:size=9}${goto 83}${fs_used /} #Root user space
 
-${voffset 0}${font Zekton:style=Bold:size=11}${goto 85}ROOT${goto 170}SWAP
-${font Zekton:style=Bold:size=9}${goto 83}${fs_used /}${goto 175}${swapperc}%
+${color0}${goto 170}${voffset -40}${font Zekton:style=Bold:size=11} SWAP #SWAP area
+${goto 175}${voffset 20}${font Zekton:style=Bold:size=9}${swapperc}% #SWAP vale
 
-${font Zekton:style=Bold:size=10}${voffset 45}${goto 50}kernel${goto 130} ${kernel}
+${color1}${font Zekton:style=Bold:size=10}${voffset 45}${goto 50}kernel${goto 130} ${kernel}
 ${font Zekton:style=Bold:size=10}${goto 50}machine${goto 130}${machine}
 
 
